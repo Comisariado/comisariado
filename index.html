@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Comisariado</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #fff;
-    }
-
-    header {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Comisariado</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+}
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -28,7 +25,6 @@
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-
 .header-container {
   display: flex;
   align-items: center;
@@ -39,58 +35,45 @@
   font-size: 0.7rem;
   line-height: 1rem;
 }
-
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
 .nav a {
   color: #fff;
   text-decoration: none;
   margin-left: 1.5rem;
   font-size: 1rem;
 }
-
 .nav a:hover {
   text-decoration: underline;
 }
-
-
- .gallery-section {
+.gallery-section {
   padding: 0.5rem;
   text-align: center;
-  margin-top: 80px; /* ajusta según la altura del header */
 }
-
-
-    .gallery-section h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.7rem;
-      justify-items: center;
-    }
-
-    .video-thumb {
-      cursor: pointer;
-    }
-
-   .thumb-overlay {
+.gallery-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.7rem;
+  justify-items: center;
+}
+.video-thumb {
+  cursor: pointer;
+}
+.thumb-overlay {
   position: relative;
   width: 100%;
 }
-
 .thumb-overlay img {
   display: block;
   width: 100%;
   filter: grayscale(1) opacity(0.7);
 }
-
 .thumb-text {
   position: absolute;
   bottom: 0;
@@ -102,96 +85,125 @@
   font-size: 0.7rem;
   text-align: left;
 }
-
     /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 80px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .modal-content {
-      position: relative;
-      margin: auto;
-      padding: 1rem;
-      width: 90%;
-      max-width: 800px;
-      background: #fff;
-    }
-
-    .iframe-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      margin-top: 2rem;
-    }
-
-    .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .close {
-      position: absolute;
-      top: 0.5rem;
-     right: 2.1rem;
-      font-size: 2rem;
-      color: #333;
-      cursor: pointer;
-    }
-
-    .description {
-      margin-top: 1rem;
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.5;
-    }
-    footer {
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+}
+.iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.4rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background-color: #222;
+  width: 33px;
+  height: 33px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 1.9rem;
+  z-index: 10;
+  justify-content: center;
+  text-decoration: none;
+}
+.close:hover {
+  background-color: #00adefff;
+  color: #222;
+}
+.description {
+  margin-top: 1rem;
+  color: #222;
+  text-align: left;
+  column-count: 1; /* 1 columna por defecto */
+  column-gap: 2rem;
+}
+.description h2 {
+  margin: 1rem 0 1rem 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.description p {
+  font-size: 0.7rem;
+  line-height: 1.1rem;
+}
+.description hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0.7rem 0 0.2rem 0;
+  width: 100%;
+}
+footer {
   background: #fff;
   color: #222;
   padding: 0.7rem;
   text-align: left;
   font-size: 0.7rem;
 }
-
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0.7rem;
 }
+@media (min-width: 768px) {
+.gallery-section {
+  margin: 5rem auto 0 auto;
+  max-width: 1200px;
+}
+.description {
+  column-count: 2;
+  margin: 1rem;
+}
+}
 </style>
 </head>
 <body>
-  <header>
-  <div class="header-container">
-    <div class="logo"><img src="assets/favicon-32x32.png" alt="Comisariado" /></div>
-    <nav class="nav">
-      <p>Composición cuyo material es la<br>obra de los otros.</p>
-    </nav>
-  </div>
+<header>
+<div class="header-container">
+<div class="logo"><img src="assets/favicon-32x32.png" alt="Comisariado" /></div>
+<nav class="nav"><p>Composición cuyo material es la<br>obra de los otros.</p></nav>
+</div>
 </header>
-
-
 <section class="gallery-section">
 <div class="grid">
-      
 <div class="video-thumb" data-video="" data-description="">
-  <div class="thumb-overlay">
-    <img src="assets/LEX.png" alt="Video 1 Thumbnail" />
-    <div class="thumb-text">LAEXCUSA</div>
-  </div>
+<div class="thumb-overlay">
+<img src="assets/LEX.png" alt="Video 1 Thumbnail" />
+<div class="thumb-text">LAEXCUSA</div>
+</div>
 </div>
 
 <div class="video-thumb" data-video="" data-description="">
@@ -481,57 +493,67 @@ data-description="“Debemos construir una política en relación con los museos
 </div>
 
 <div class="video-thumb" data-video="https://player.vimeo.com/video/53802836"
-data-description="“Lo esencial es el dialogo y trabajar con la memoria del espacio” ¿Qué es curar? No hay una respuesta, depende del proyecto. Es como cuando te pones una chaqueta para ir a determinado acto o para ir a un concierto de rock te pones otra. Verdaderamente tienes que cambiarte de piel y ser un profesional. En ese sentido, es saber comportarte dependiendo de las circunstancias que se establezcan en cada proyecto específico. El curador debe ser una persona especializada en el ámbito que va a tratar, pero no solamente un gran conocedor de eso ‒como un historiador del arte, un profesor, un catedrádico‒ sino un especialista también en cómo traducir eso. En el ámbito de lo contemporáneo tiene que ser una persona que prácticamente esté tomándole el pulso a la realidad contemporánea y que esté en directa comunicación con lo que se está creando dentro de los estudios y en la calle ‒y es en la calle‒, me refiero al hecho de que actualmente, en muchísimas ocasiones, la actividad artística está relacionada con lo antropológico o con otras fórmulas que hace a lo mejor hace cincuenta o sesenta años hubieran quedado constreñidas y ahora mismo no. Por lo cual, el curador de lo contemporáneo, verdaderamente, tiene que ser un individuo contemporáneo, que esté viviendo en eso. Como curador tú estás defendiendo un discurso ideológico a partir de unos determinados objetos, unos determinados elementos, y un discurso ideológico que tiene que tener una base ética a la hora de establecer un respeto al objeto y también al espectador. En la producción artística contemporánea se establece una relación muy interesante de diálogo y negociación entre el curador, el artista y el espacio en un proyecto nuevo. Entonces, digamos que tú participas en la creación de la idea primigenia de ese proceso, aunque la autoría no es tuya sino del artista, tú participas en otro tipo de rol aportando tu visión específica sobre esa cuestión al artista. En este sentido lo que más me ha interesado, en cuanto a producciones artísticas, son las intervenciones en espacios públicos muy connotados. He trabajado por ejemplo en antiguas iglesias rococó, antiguas iglesias barrocas. El espacio en sí es otro elemento más de negociación, que está muy connotado, que tiene un significado y no vas a poner cualquier cosa porque simplemente por que traes tu mochila de discurso desde tu estudio de artista o tú como curador te interesa hablar sobre el multiculturalismo, no. Es decir, eso puedes integrarlo pero lo esencial es el diálogo y trabajar con la memoria del espacio. Desde otros ámbitos, a la hora de trabajar con una exposición de carácter retrospectivo o histórico, quizás sí es más cómodo, en un momento determinado, trabajar con espacios neutros. En el fondo los espacios neutros no dejan de ser más que un lugar, pero un lugar sin connotación en el cual tú estás construyendo el discurso con una arquitectura expresamente diseñada para eso, con lo cual no es el espacio el que obliga al discurso, sino que el discurso se va a sobreponer al espacio. Yo creo que en el ejercicio curatorial hace falta una articulación social más clara, que integre de manera más efectiva a los ciudadanos, no entendidos como espectadores sino como ciudadanos; ese es quizás el paso que nos falta por dar: llegar a más amplios sectores de la población con estrategias que no se incluyen exclusivamente en la curaduría, sino que estarían integradas en lo que es el fenómeno cultural de la presentación de una idea a través de una determinada fórmula y, sobre todo, en esa relación con la audiencia. La comprensión de que no es una sino que hay muchos tipos de audiencias y que tenemos que intentar, en la medida de lo posible, acercar a la gente, no a enseñar ‒que yo creo que es un fenómeno erróneo‒ sino a ayudar a aprender. Ahí es donde se debe poner los palos básicos de la escalera construida entre todos, para ayudar a aprender, y no tanto a enseñar. ¿Cómo se hace eso? Es difícil contestarlo, depende de cada una de las cosas que quieras mostrar, para mí es esencial saber a quién va dirigido, pero también qué quiero contar y cuáles son los objetos con los que quiero contar. Especialista en expografía crítica contemporánea, comisaria independiente y profesora universitaria. Bogotá - 18/11/2012">
+data-description='<h2>“Lo esencial es el dialogo y trabajar con la memoria del espacio”</h2>
+<p>¿Qué es curar? No hay una respuesta, depende del proyecto. Es como cuando te pones una chaqueta para ir a determinado acto o para ir a un concierto de rock te pones otra. Verdaderamente tienes que cambiarte de piel y ser un profesional. En ese sentido, es saber comportarte dependiendo de las circunstancias que se establezcan en cada proyecto específico. El curador debe ser una persona especializada en el ámbito que va a tratar, pero no solamente un gran conocedor de eso ‒como un historiador del arte, un profesor, un catedrádico‒ sino un especialista también en cómo traducir eso.<br><br>
+En el ámbito de lo contemporáneo tiene que ser una persona que prácticamente esté tomándole el pulso a la realidad contemporánea y que esté en directa comunicación con lo que se está creando dentro de los estudios y en la calle ‒y es en la calle‒, me refiero al hecho de que actualmente, en muchísimas ocasiones, la actividad artística está relacionada con lo antropológico o con otras fórmulas que hace a lo mejor hace cincuenta o sesenta años hubieran quedado constreñidas y ahora mismo no. Por lo cual, el curador de lo contemporáneo, verdaderamente, tiene que ser un individuo contemporáneo, que esté viviendo en eso.<br><br>
+Como curador tú estás defendiendo un discurso ideológico a partir de unos determinados objetos, unos determinados elementos, y un discurso ideológico que tiene que tener una base ética a la hora de establecer un respeto al objeto y también al espectador.<br><br>
+En la producción artística contemporánea se establece una relación muy interesante de diálogo y negociación entre el curador, el artista y el espacio en un proyecto nuevo. Entonces, digamos que tú participas en la creación de la idea primigenia de ese proceso, aunque la autoría no es tuya sino del artista, tú participas en otro tipo de rol aportando tu visión específica sobre esa cuestión al artista. En este sentido lo que más me ha interesado, en cuanto a producciones artísticas, son las intervenciones en espacios públicos muy connotados.<br><br>
+He trabajado por ejemplo en antiguas iglesias rococó, antiguas iglesias barrocas. El espacio en sí es otro elemento más de negociación, que está muy connotado, que tiene un significado y no vas a poner cualquier cosa porque simplemente por que traes tu mochila de discurso desde tu estudio de artista o tú como curador te interesa hablar sobre el multiculturalismo, no. Es decir, eso puedes integrarlo pero lo esencial es el diálogo y trabajar con la memoria del espacio.<br><br>
+Desde otros ámbitos, a la hora de trabajar con una exposición de carácter retrospectivo o histórico, quizás sí es más cómodo, en un momento determinado, trabajar con espacios neutros. En el fondo los espacios neutros no dejan de ser más que un lugar, pero un lugar sin connotación en el cual tú estás construyendo el discurso con una arquitectura expresamente diseñada para eso, con lo cual no es el espacio el que obliga al discurso, sino que el discurso se va a sobreponer al espacio.<br><br>
+Yo creo que en el ejercicio curatorial hace falta una articulación social más clara, que integre de manera más efectiva a los ciudadanos, no entendidos como espectadores sino como ciudadanos; ese es quizás el paso que nos falta por dar: llegar a más amplios sectores de la población con estrategias que no se incluyen exclusivamente en la curaduría, sino que estarían integradas en lo que es el fenómeno cultural de la presentación de una idea a través de una determinada fórmula y, sobre todo, en esa relación con la audiencia.<br><br>
+La comprensión de que no es una sino que hay muchos tipos de audiencias y que tenemos que intentar, en la medida de lo posible, acercar a la gente, no a enseñar ‒que yo creo que es un fenómeno erróneo‒ sino a ayudar a aprender. Ahí es donde se debe poner los palos básicos de la escalera construida entre todos, para ayudar a aprender, y no tanto a enseñar. ¿Cómo se hace eso? Es difícil contestarlo, depende de cada una de las cosas que quieras mostrar, para mí es esencial saber a quién va dirigido, pero también qué quiero contar y cuáles son los objetos con los que quiero contar.</p><hr>
+<p>Isabel Tejeda Martín - Especialista en expografía crítica contemporánea, comisaria independiente y profesora universitaria.</p><hr>
+<p>Bogotá - 18/11/2012</p>'>
 <div class="thumb-overlay"><img src="assets/001.jpg" alt="Video 1 Thumbnail" /><div class="thumb-text">Isabel Tejeda Martín</div></div>
 </div>
 </div>
 </section>      
-
   <!-- Modal -->
-  <div id="videoModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="iframe-container">
-        <iframe id="videoIframe" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
-      <div id="videoDescription" class="description"></div>
-    </div>
-  </div>
+<div id="videoModal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<div class="iframe-container">
+<iframe id="videoIframe" frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="videoDescription" class="description"></div>
+</div>
+</div>
 <footer>
-  <div class="footer-container">
-    <p>2012 / 2017</p>
-    <p>infocomisariado@gmail.com</p>
-  </div>
+<div class="footer-container"><p>2012 / 2017</p><p>infocomisariado@gmail.com</p></div>
 </footer>
-  <script>
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("videoIframe");
-    const descriptionBox = document.getElementById("videoDescription");
-    const closeBtn = document.querySelector(".close");
+<script>
+const modal = document.getElementById("videoModal");
+const iframe = document.getElementById("videoIframe");
+const descriptionBox = document.getElementById("videoDescription");
+const closeBtn = document.querySelector(".close");
 
-    document.querySelectorAll(".video-thumb").forEach(thumb => {
-      thumb.addEventListener("click", () => {
-        const videoUrl = thumb.getAttribute("data-video");
-        const description = thumb.getAttribute("data-description");
-        iframe.src = videoUrl;
-        descriptionBox.textContent = description || "";
-        modal.style.display = "block";
-      });
-    });
-
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
+document.querySelectorAll(".video-thumb").forEach(thumb => {
+  thumb.addEventListener("click", () => {
+    const videoUrl = thumb.getAttribute("data-video");
+    const description = thumb.getAttribute("data-description");
+    if (videoUrl) {
+      iframe.src = videoUrl;
+    } else {
       iframe.src = "";
-      descriptionBox.textContent = "";
-    };
+    }
+    descriptionBox.innerHTML = description || "";
+    modal.style.display = "block";
+  });
+});
 
-    window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        iframe.src = "";
-        descriptionBox.textContent = "";
-      }
-    };
-  </script>
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+  iframe.src = "";
+  descriptionBox.textContent = "";
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    iframe.src = "";
+    descriptionBox.textContent = "";
+  }
+};
+</script>
 </body>
 </html>
